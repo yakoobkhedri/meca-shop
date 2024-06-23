@@ -51,6 +51,10 @@ var banner3 = new Swiper(".banner3", {
 var janebi = new Swiper(".janebi", {
     slidesPerView: 1,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 16,
     navigation: {
         nextEl: ".swiper-button-next4",
@@ -60,6 +64,10 @@ var janebi = new Swiper(".janebi", {
 var category = new Swiper(".brands", {
     slidesPerView: 2.8,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 14,
     breakpoints: {
         576: {
@@ -80,6 +88,10 @@ var category = new Swiper(".brands", {
 var time = new Swiper(".time", {
     slidesPerView: 1.6,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 16,
     breakpoints: {
         576: {
@@ -100,6 +112,10 @@ var time = new Swiper(".time", {
 var mobile = new Swiper(".mobile", {
     slidesPerView: 1.6,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 16,
     breakpoints: {
         1280: {
@@ -123,6 +139,10 @@ var mobile = new Swiper(".mobile", {
 var mobile2 = new Swiper(".mobile2", {
     slidesPerView: 2.4,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 16,
     breakpoints: {
         1280: {
@@ -143,6 +163,10 @@ var mobile2 = new Swiper(".mobile2", {
 var mobile = new Swiper(".blog", {
     slidesPerView: 1.1,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 24,
     breakpoints: {
         576: {
@@ -163,6 +187,10 @@ var mobile = new Swiper(".blog", {
 var comments = new Swiper(".comments", {
     slidesPerView: 1.7,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 24,
     breakpoints: {
         576: {
@@ -184,6 +212,10 @@ var swiper = new Swiper(".smallImgs", {
     spaceBetween: 10,
     slidesPerView: 5,
     freeMode: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     watchSlidesProgress: true,
 });
 var swiper2 = new Swiper(".gallery", {
@@ -192,6 +224,10 @@ var swiper2 = new Swiper(".gallery", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     thumbs: {
         swiper: swiper,
     },
@@ -199,6 +235,10 @@ var swiper2 = new Swiper(".gallery", {
 var brands = new Swiper(".payment", {
     slidesPerView: 2.8,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 14,
     breakpoints: {
         576: {
@@ -219,6 +259,10 @@ var brands = new Swiper(".payment", {
 var category = new Swiper(".category", {
     slidesPerView: 1.5,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 14,
     breakpoints: {
         400: {
@@ -245,6 +289,10 @@ var category = new Swiper(".category", {
 var category2 = new Swiper(".category2", {
     slidesPerView: 2,
     loop: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
     spaceBetween: 14,
     breakpoints: {
         576: {
@@ -407,14 +455,20 @@ startButton.forEach((item) => {
                 document.getElementById('noCode').style.display = 'block';
             }
         }, 1000);
-         // change number
+        // change number
 
-    let changeNumber = document.getElementById('changeNumber');
+        let changeNumber = document.getElementById('changeNumber');
 
-    changeNumber.addEventListener('click', function () {
-        this.parentElement.style.display = 'none';
-        this.parentElement.previousElementSibling.style.display = 'block';
-        clearInterval(x);
-    })
+        changeNumber.addEventListener('click', function () {
+            this.parentElement.style.display = 'none';
+            this.parentElement.previousElementSibling.style.display = 'block';
+            clearInterval(x);
+        })
     });
-})
+});
+
+// go back
+
+function goBack(){
+    window.history.back();
+}

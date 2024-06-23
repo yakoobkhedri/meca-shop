@@ -17,20 +17,20 @@ let cartModal=document.getElementById('cartModal');
 let openCart=document.getElementById('openCart');
 let closeCartModal=document.getElementById('closeCartModal');
 
-openCategory.addEventListener('click',function () {
-    categoryModal.classList.toggle('active');
-    cartModal.classList.remove('active');
-});
 openCart.addEventListener('click',function () {
     cartModal.classList.toggle('active');
     categoryModal.classList.remove('active');
+});
+closeCartModal.addEventListener('click',function () {
+    cartModal.classList.remove('active');
 });
 addInput.forEach((item)=>{
     item.addEventListener('click',function () {
         item.nextElementSibling.value++
     });
 });
-closeCartModal.addEventListener('click',function () {
+openCategory.addEventListener('click',function () {
+    categoryModal.classList.toggle('active');
     cartModal.classList.remove('active');
 });
 openFilter.addEventListener('click',function () {

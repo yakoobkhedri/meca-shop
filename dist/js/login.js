@@ -10,6 +10,7 @@ loginIcon.forEach((item)=>{
         loginModal.classList.add('active');
         categoryModal.classList.remove('active');
         cartModal.classList.remove('active');
+        filterModal.classList.remove('active');
         overlay.classList.add('active');
     })
 })

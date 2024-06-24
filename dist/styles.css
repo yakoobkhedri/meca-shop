@@ -705,6 +705,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-\[-1px\] {
+  bottom: -1px;
+}
+
 .bottom-\[79px\] {
   bottom: 79px;
 }
@@ -781,20 +785,16 @@ video {
   top: 174;
 }
 
-.top-auto {
-  top: auto;
-}
-
-.top-\[70px\] {
-  top: 70px;
-}
-
 .top-\[68px\] {
   top: 68px;
 }
 
-.bottom-\[-1px\] {
-  bottom: -1px;
+.top-auto {
+  top: auto;
+}
+
+.top-\[124px\] {
+  top: 124px;
 }
 
 .-z-10 {
@@ -923,10 +923,6 @@ video {
 
 .mb-24 {
   margin-bottom: 6rem;
-}
-
-.mb-28 {
-  margin-bottom: 7rem;
 }
 
 .mb-3 {
@@ -1249,6 +1245,10 @@ video {
   height: 73vh;
 }
 
+.h-\[82vh\] {
+  height: 82vh;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1257,8 +1257,12 @@ video {
   height: 100vh;
 }
 
-.h-\[82vh\] {
-  height: 82vh;
+.h-\[79vh\] {
+  height: 79vh;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .max-h-0 {
@@ -1489,6 +1493,18 @@ video {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-7 {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -2115,6 +2131,10 @@ video {
   padding-bottom: 2.25rem;
 }
 
+.pb-\[88px\] {
+  padding-bottom: 88px;
+}
+
 .pe-2 {
   -webkit-padding-end: 0.5rem;
           padding-inline-end: 0.5rem;
@@ -2170,8 +2190,8 @@ video {
   padding-top: 1.5rem;
 }
 
-.pb-\[88px\] {
-  padding-bottom: 88px;
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .text-left {
@@ -3189,6 +3209,11 @@ input[type=range]:focus {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-red-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
 .hover\:shadow-none:hover {
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
@@ -3541,6 +3566,10 @@ input[type=range]:focus {
     position: relative;
   }
 
+  .lg\:-top-\[69px\] {
+    top: -69px;
+  }
+
   .lg\:bottom-auto {
     bottom: auto;
   }
@@ -3559,10 +3588,6 @@ input[type=range]:focus {
 
   .lg\:top-7 {
     top: 1.75rem;
-  }
-
-  .lg\:-top-\[69px\] {
-    top: -69px;
   }
 
   .lg\:order-first {
@@ -3641,10 +3666,6 @@ input[type=range]:focus {
 
   .lg\:mt-10 {
     margin-top: 2.5rem;
-  }
-
-  .lg\:mt-12 {
-    margin-top: 3rem;
   }
 
   .lg\:mt-14 {

@@ -20,6 +20,7 @@ let closeCartModal=document.getElementById('closeCartModal');
 openCart.addEventListener('click',function () {
     cartModal.classList.toggle('active');
     categoryModal.classList.remove('active');
+    filterModal.classList.remove('active');
 });
 closeCartModal.addEventListener('click',function () {
     cartModal.classList.remove('active');
@@ -32,6 +33,7 @@ addInput.forEach((item)=>{
 openCategory.addEventListener('click',function () {
     categoryModal.classList.toggle('active');
     cartModal.classList.remove('active');
+    filterModal.classList.remove('active');
 });
 openFilter.addEventListener('click',function () {
     filterModal.classList.add('active');

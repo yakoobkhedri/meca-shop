@@ -303,34 +303,21 @@ height: 2px;
 #profile-menu.active{
   top: 0;
 }
-/*
-*::-webkit-scrollbar {
-    width: 12px;
-    !* width of the entire scrollbar *!
+.sizeBox > span:last-child,.categoryBox > div:nth-child(1),.categoryBox > div:nth-child(2),.categoryBox > div:nth-child(3),.categoryBox > div:nth-child(4),.categoryBox > div:nth-child(5),.categoryBox > div:last-child{
+  display: block;
 }
-
-*::-webkit-scrollbar-track {
-    background: transparent;
-    !* color of the tracking area *!
-    margin: 29px 0;
+.sizeBox > span:nth-child(1),.sizeBox > span:nth-child(2),.sizeBox > span:nth-child(3){
+  display: flex;
 }
-
-*::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    !* color of the scroll thumb *!
-    border-radius: 20px;
-    !* roundness of the scroll thumb *!
-    border: 3px solid transparent;
-    !* creates padding around scroll thumb *!
+.categoryBox > div,.sizeBox > span{
+  display: none;
 }
-
-* {
-    scrollbar-width: thin;
-    !* "auto" or "thin" *!
-    scrollbar-color: transparent transparent;
-    !* scroll thumb and track *!
-    scroll-margin: 29px 0;
-}*/
+.sizeBox.active > span{
+  display: flex;
+}
+.categoryBox.active > div{
+  display: block;
+}
 @media only screen and (max-width: 992px) {
 
   .smallImgs .swiper-slide-thumb-active {

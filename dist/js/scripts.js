@@ -256,36 +256,6 @@ var brands = new Swiper(".payment", {
         prevEl: ".swiper-button-prev",
     }
 });
-var category = new Swiper(".category", {
-    slidesPerView: 1.5,
-    loop: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    spaceBetween: 14,
-    breakpoints: {
-        400: {
-            slidesPerView: 2.3
-        },
-        576: {
-            slidesPerView: 4
-        },
-        768: {
-            slidesPerView: 6
-        },
-        992: {
-            slidesPerView: 8
-        },
-        1400: {
-            slidesPerView: 11
-        }
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    }
-});
 var category2 = new Swiper(".category2", {
     slidesPerView: 2,
     loop: true,
@@ -469,6 +439,26 @@ startButton.forEach((item) => {
 
 // go back
 
-function goBack(){
+function goBack() {
     window.history.back();
 }
+
+// show all category
+
+let showAllCat = document.getElementById('showAllCat');
+
+showAllCat.addEventListener('click', function () {
+    this.parentElement.parentElement.classList.add('active');
+    this.parentElement.style.display = 'none';
+})
+
+// show all Size
+
+let showSize = Array.from(document.getElementsByClassName('showSize'));
+
+showSize.forEach((item) => {
+    item.addEventListener('click', function () {
+        item.parentElement.classList.add('active');
+        item.style.display = 'none';
+    })
+})

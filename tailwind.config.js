@@ -14,6 +14,7 @@ module.exports = {
                 'light': '#444',
                 'info': '#2DB5C2',
                 'info2': 'rgb(28, 139, 150)',
+                'info3': 'rgb(215, 241, 243)',
                 'footer': '#F2F2F2',
                 'pay': '#F9F9F9',
                 'firozei': '#0B5961',

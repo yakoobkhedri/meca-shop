@@ -7,6 +7,7 @@ let closeFilter=document.getElementById('closeFilter');
 let selectedFilter=document.getElementById('selectedFilter');
 let openSelectedFilter=Array.from(document.getElementsByClassName('openSelectedFilter'));
 let addInput=Array.from(document.getElementsByClassName('addInput'));
+let lessInput=Array.from(document.getElementsByClassName('lessInput'));
 let closeSelectedFilter=document.getElementById('closeSelectedFilter');
 let openPriceLimit=document.getElementById('openPriceLimit');
 let priceModal=document.getElementById('priceModal');
@@ -28,6 +29,13 @@ closeCartModal.addEventListener('click',function () {
 addInput.forEach((item)=>{
     item.addEventListener('click',function () {
         item.nextElementSibling.value++
+    });
+});
+lessInput.forEach((item)=>{
+    item.addEventListener('click',function () {
+        if(item.previousElementSibling.value > 1){
+            item.previousElementSibling.value--
+        }
     });
 });
 openCategory.addEventListener('click',function () {

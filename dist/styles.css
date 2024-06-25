@@ -1253,6 +1253,10 @@ video {
   height: 100vh;
 }
 
+.h-\[260px\] {
+  height: 260px;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -1387,6 +1391,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[260px\] {
+  width: 260px;
 }
 
 .min-w-\[110px\] {
@@ -1574,6 +1582,10 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-y-6 {
+  row-gap: 1.5rem;
 }
 
 .overflow-hidden {
@@ -4016,6 +4028,10 @@ input[type=range]:focus {
 }
 
 @media (min-width: 1280px) {
+  .xl\:h-\[198px\] {
+    height: 198px;
+  }
+
   .xl\:h-\[235px\] {
     height: 235px;
   }

@@ -318,6 +318,9 @@ height: 2px;
 .categoryBox.active > div{
   display: block;
 }
+.selectSize > div.active{
+  @apply bg-info3
+}
 @media only screen and (max-width: 992px) {
 
   .smallImgs .swiper-slide-thumb-active {

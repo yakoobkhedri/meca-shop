@@ -443,6 +443,18 @@ function goBack() {
     window.history.back();
 }
 
+// select size  
+
+let selectSize = Array.from(document.querySelectorAll('.selectSize > div'));
+
+selectSize.forEach((item) => {
+    item.addEventListener('click', function () {
+        selectSize.forEach((items) => {items.classList.remove('active');})
+        item.classList.add('active');
+        document.getElementById('sizeText').textContent = item.textContent;
+    })
+})
+
 // show all category
 
 let showAllCat = document.getElementById('showAllCat');

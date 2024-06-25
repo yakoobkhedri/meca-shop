@@ -4113,12 +4113,12 @@
         class="bg-white rounded-2xl transition-all duration-200 opacity-0 fixed inset-x-0 top-auto bottom-0 lg:bottom-auto lg:top-56 mx-auto lg:max-w-472 w-full -z-40">
         <div class="flex items-center justify-between py-4 px-8 border-b shadow-shadowMenu lg:shadow-none">
             <p class="font-medium text-lg">اشتراک گذاری</p>
-            <svg id="closeShareModal" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <svg id="closeShareModal" class="cursor-pointer group" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
+                <path class="group-hover:fill-red-600 transition-all" fill-rule="evenodd" clip-rule="evenodd"
                     d="M6.25105 6.25105C6.58579 5.91632 7.1285 5.91632 7.46323 6.25105L17.7489 16.5368C18.0837 16.8715 18.0837 17.4142 17.7489 17.7489C17.4142 18.0837 16.8715 18.0837 16.5368 17.7489L6.25105 7.46323C5.91632 7.1285 5.91632 6.58579 6.25105 6.25105Z"
                     fill="black" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
+                <path class="group-hover:fill-red-600 transition-all" fill-rule="evenodd" clip-rule="evenodd"
                     d="M17.7489 6.25105C18.0837 6.58579 18.0837 7.1285 17.7489 7.46323L7.46323 17.7489C7.1285 18.0837 6.58579 18.0837 6.25105 17.7489C5.91632 17.4142 5.91632 16.8715 6.25105 16.5368L16.5368 6.25105C16.8715 5.91632 17.4142 5.91632 17.7489 6.25105Z"
                     fill="black" />
             </svg>
@@ -4126,11 +4126,11 @@
         <div class="p-6">
             <h5 class="font-bold text-sm">این کالا را با دوستان خود به اشتراک بگذارید!</h5>
             <a
-                class="flex items-center justify-center gap-2 rounded-lg border border-info cursor-pointer p-4 mt-4 text-sm font-bold text-info">
+                class="transition-all hover:bg-info hover:text-white group flex items-center justify-center gap-2 rounded-lg border border-info cursor-pointer p-4 mt-4 text-sm font-bold text-info">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="6.99805" y="6.99805" width="14.0058" height="14.0058" rx="2" stroke="#2DB5C2"
+                    <rect class="group-hover:stroke-white transition-all" x="6.99805" y="6.99805" width="14.0058" height="14.0058" rx="2" stroke="#2DB5C2"
                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
+                    <path class="group-hover:stroke-white transition-all"
                         d="M6.99825 17.0024H4.99742C3.89239 17.0024 2.99658 16.1066 2.99658 15.0016V4.99742C2.99658 3.89239 3.89239 2.99658 4.99742 2.99658H15.0016C16.1066 2.99658 17.0024 3.89239 17.0024 4.99742V6.99825"
                         stroke="#2DB5C2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -4144,12 +4144,12 @@
         class="bg-white rounded-2xl transition-all duration-200 opacity-0 fixed inset-x-0 top-auto bottom-0 lg:bottom-auto lg:top-56 mx-auto lg:max-w-472 w-full -z-40">
         <div class="flex items-center justify-between py-4 px-8 border-b shadow-shadowMenu lg:shadow-none">
             <p class="font-medium text-lg">اطلاع رسانی</p>
-            <svg id="closeNotifModal" class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            <svg id="closeNotifModal" class="cursor-pointer group" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
+                <path class="group-hover:fill-red-600 transition-all" fill-rule="evenodd" clip-rule="evenodd"
                     d="M6.25105 6.25105C6.58579 5.91632 7.1285 5.91632 7.46323 6.25105L17.7489 16.5368C18.0837 16.8715 18.0837 17.4142 17.7489 17.7489C17.4142 18.0837 16.8715 18.0837 16.5368 17.7489L6.25105 7.46323C5.91632 7.1285 5.91632 6.58579 6.25105 6.25105Z"
                     fill="black" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
+                <path class="group-hover:fill-red-600 transition-all" fill-rule="evenodd" clip-rule="evenodd"
                     d="M17.7489 6.25105C18.0837 6.58579 18.0837 7.1285 17.7489 7.46323L7.46323 17.7489C7.1285 18.0837 6.58579 18.0837 6.25105 17.7489C5.91632 17.4142 5.91632 16.8715 6.25105 16.5368L16.5368 6.25105C16.8715 5.91632 17.4142 5.91632 17.7489 6.25105Z"
                     fill="black" />
             </svg>
@@ -4189,7 +4189,7 @@
         </div>
         <div class="p-4 border-t w-full">
             <input type="submit" value="ثبت"
-                class="font-bold text-sm cursor-pointer rounded-lg bg-info p-3 text-white md:w-48 w-full md:mr-auto block">
+                class="font-bold text-sm cursor-pointer transition-all hover:bg-info2 rounded-lg bg-info p-3 text-white md:w-48 w-full md:mr-auto block">
         </div>
     </form>
 
@@ -7438,7 +7438,7 @@
     </header>
 
     <!-- main -->
-    <main class="xl:max-w-[1400px] sm:max-w-7xl mx-auto px-4 lg:px-0 mt-10 pb-[88px] lg:pb-0">
+    <main class="xl:max-w-[1400px] sm:max-w-7xl mx-auto px-4 mt-10 pb-[88px] lg:pb-0">
 
         <!-- breadcrumb -->
         <section>
@@ -7604,31 +7604,16 @@
                             <!--  -->
                             <div class="mt-6">
                                 <p class="text-gray-800 text-sm">
-                                    رنگ:
-                                    <span class="font-bold">سبز</span>
+                                    سایز:
+                                    <span id="sizeText" class="font-bold">3XL</span>
                                 </p>
-                                <div class="mt-2 [&>*]:cursor-pointer flex items-center gap-2">
-                                    <svg class="transition-all duration-200 hover:bg-teal-50 border-2 hover:border-info rounded-full"
-                                        width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" fill="white"
-                                            stroke="#E0E0E0" />
-                                        <rect x="4" y="4" width="24" height="24" rx="12" fill="#212121" />
-                                    </svg>
-                                    <svg class="transition-all duration-200 hover:bg-teal-50 border-2 hover:border-info rounded-full"
-                                        width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" fill="white"
-                                            stroke="#E0E0E0" />
-                                        <rect x="4" y="4" width="24" height="24" rx="12" fill="#7587AA" />
-                                    </svg>
-                                    <svg class="transition-all duration-200 hover:bg-teal-50 border-2 hover:border-info rounded-full"
-                                        width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="1.25" y="1.25" width="33.5" height="33.5" rx="16.75" fill="#EAF8F9"
-                                            stroke="#2DB5C2" stroke-width="1.5" />
-                                        <rect x="6" y="6" width="24" height="24" rx="12" fill="#74CE91" />
-                                    </svg>
+                                <div class="mt-4 [&>*]:cursor-pointer flex items-center gap-2 selectSize">
+                                    <div class="w-8 h-8 transition-all font-bold hover:bg-info3 text-sm rounded-full border border-dashed border-info flex items-center justify-center">S</div>
+                                    <div class="w-8 h-8 transition-all font-bold hover:bg-info3 text-sm rounded-full border border-dashed border-info flex items-center justify-center">M</div>
+                                    <div class="w-8 h-8 transition-all font-bold hover:bg-info3 text-sm rounded-full border border-dashed border-info flex items-center justify-center">L</div>
+                                    <div class="w-8 h-8 transition-all font-bold hover:bg-info3 text-sm rounded-full border border-dashed border-info flex items-center justify-center">XL</div>
+                                    <div class="w-8 h-8 transition-all font-bold hover:bg-info3 text-sm rounded-full border border-dashed border-info flex items-center justify-center">2XL</div>
+                                    <div class="w-8 h-8 transition-all active font-bold hover:bg-info3 text-sm rounded-full border border-dashed border-info flex items-center justify-center">3XL</div>
                                 </div>
                                 <p class="text-gray-800 text-sm mt-6 hidden lg:block">ویژگی‌ها</p>
                                 <ul class="mt-4 list-disc pr-4 pb-6 border-b hidden lg:block">
@@ -7748,42 +7733,42 @@
                                 <p class="text-xs mt-3 text-danger text-center">تنها ۲ عدد موجود میباشد</p>
                             </div>
                             <div class="flex items-center justify-center gap-4 mt-4">
-                                <a class="cursor-pointer">
+                                <a class="cursor-pointer active:scale-95 group">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                        <path class="group-hover:fill-red-600 group-hover:stroke-red-600 transition-all" fill-rule="evenodd" clip-rule="evenodd"
                                             d="M19.494 6.51134V6.51134C20.5046 7.52697 21.0486 8.91625 20.9965 10.348C20.9444 11.7798 20.3007 13.1259 19.219 14.0653L12.6536 19.756C12.2786 20.0814 11.7214 20.0814 11.3464 19.756L4.781 14.0654C3.69925 13.1259 3.05561 11.7799 3.00348 10.3481C2.95136 8.91628 3.49542 7.527 4.506 6.51137V6.51137C6.4079 4.59965 9.46548 4.48754 11.5023 6.25484L12 6.68624L12.4977 6.25481C14.5345 4.48753 17.5921 4.59965 19.494 6.51134Z"
                                             stroke="#999999" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg>
                                 </a>
-                                <a class="cursor-pointer notifIcon">
+                                <a class="cursor-pointer active:scale-95 notifIcon group">
                                     <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                        <path class="group-hover:fill-yellow-400 transition-all" fill-rule="evenodd" clip-rule="evenodd"
                                             d="M15 11.75L16.7071 13.4571C16.8946 13.6446 17 13.899 17 14.1642V15C17 15.5523 16.5523 16 16 16H2C1.44772 16 1 15.5523 1 15V14.1642C1 13.899 1.10536 13.6446 1.29289 13.4571L3 11.75V7.5C3 4.18629 5.68629 1.5 9 1.5V1.5C10.5913 1.5 12.1174 2.13214 13.2426 3.25736C14.3679 4.38258 15 5.9087 15 7.5V11.75Z"
                                             stroke="#999999" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
-                                        <path
+                                        <path class="group-hover:fill-yellow-400 transition-all"
                                             d="M6 16V16.25C6 17.9069 7.34315 19.25 9 19.25C10.6569 19.25 12 17.9069 12 16.25V16"
                                             stroke="#999999" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
                                     </svg>
                                 </a>
-                                <a class="cursor-pointer shareIcon">
+                                <a class="cursor-pointer active:scale-95 shareIcon group">
                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
+                                        <path class="group-hover:stroke-info transition-all"
                                             d="M16.0012 9.99902H18.0021C19.1071 9.99902 20.0029 10.8948 20.0029 11.9999V20.0032C20.0029 21.1082 19.1071 22.004 18.0021 22.004H7.99792C6.89289 22.004 5.99708 21.1082 5.99708 20.0032V11.9999C5.99708 10.8948 6.89289 9.99902 7.99792 9.99902H9.99875"
                                             stroke="#999999" stroke-width="1.5" stroke-linecap="round"
                                             stroke-linejoin="round" />
-                                        <path d="M13 16.0016V3.99658" stroke="#999999" stroke-width="1.5"
+                                        <path class="group-hover:stroke-info transition-all" d="M13 16.0016V3.99658" stroke="#999999" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M16.0012 6.99783L13 3.99658L9.99875 6.99783" stroke="#999999"
+                                        <path class="group-hover:stroke-info transition-all" d="M16.0012 6.99783L13 3.99658L9.99875 6.99783" stroke="#999999"
                                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </a>
-                                <a class="cursor-pointer">
+                                <a class="cursor-pointer active:scale-95">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <rect opacity="0.5" x="5" y="3" width="7" height="18"

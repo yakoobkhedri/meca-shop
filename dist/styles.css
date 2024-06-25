@@ -1483,6 +1483,14 @@ video {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -1574,6 +1582,11 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-x-4 {
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 
 .overflow-hidden {
@@ -1696,10 +1709,6 @@ video {
 
 .border-t {
   border-top-width: 1px;
-}
-
-.border-t-1 {
-  border-top-width: 1.5px;
 }
 
 .border-dashed {
@@ -2882,18 +2891,6 @@ input[type=range]:focus {
   visibility: visible;
 }
 
-#overlay2{
-  opacity: 0;
-  z-index: 50;
-  visibility: hidden;
-  transition: all .4s;
-}
-
-#overlay2.active{
-  opacity: 40%;
-  visibility: visible;
-}
-
 #editModal,#loginModal,#compareModal,#commentModal,#shareModal,#notifModal,#editAddress,#saveMapModal{
   opacity: 0;
   z-index: 50;
@@ -3042,10 +3039,6 @@ input[type=range]:focus {
   fill: #dc2626;
 }
 
-.group:hover .group-hover\:fill-yellow-600 {
-  fill: #ca8a04;
-}
-
 .group:hover .group-hover\:fill-yellow-400 {
   fill: #facc15;
 }
@@ -3062,12 +3055,8 @@ input[type=range]:focus {
   stroke: #fff;
 }
 
-.group:hover .group-hover\:stroke-yellow-600 {
-  stroke: #ca8a04;
-}
-
-.group:hover .group-hover\:stroke-yellow-400 {
-  stroke: #facc15;
+.group:hover .group-hover\:stroke-info2 {
+  stroke: rgb(28, 139, 150);
 }
 
 .group:hover .group-hover\:py-6 {
@@ -3093,6 +3082,11 @@ input[type=range]:focus {
 .group:hover .group-hover\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:text-info2 {
+  --tw-text-opacity: 1;
+  color: rgb(28 139 150 / var(--tw-text-opacity));
 }
 
 .group:hover .group-hover\:opacity-0 {
@@ -3208,6 +3202,11 @@ input[type=range]:focus {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-info2:hover {
+  --tw-text-opacity: 1;
+  color: rgb(28 139 150 / var(--tw-text-opacity));
+}
+
 .hover\:shadow-none:hover {
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
@@ -3294,12 +3293,21 @@ input[type=range]:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .sm\:gap-20 {
     gap: 5rem;
   }
 
   .sm\:gap-4 {
     gap: 1rem;
+  }
+
+  .sm\:gap-x-0 {
+    -moz-column-gap: 0px;
+         column-gap: 0px;
   }
 
   .sm\:rounded-3xl {
@@ -3312,6 +3320,14 @@ input[type=range]:focus {
 
   .sm\:border {
     border-width: 1px;
+  }
+
+  .sm\:border-b-0 {
+    border-bottom-width: 0px;
+  }
+
+  .sm\:border-l {
+    border-left-width: 1px;
   }
 
   .sm\:border-gray-200 {
@@ -3331,6 +3347,10 @@ input[type=range]:focus {
 
   .sm\:pb-3 {
     padding-bottom: 0.75rem;
+  }
+
+  .sm\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .sm\:text-2xl {
@@ -3428,6 +3448,10 @@ input[type=range]:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -3470,10 +3494,6 @@ input[type=range]:focus {
 
   .md\:border-t-0 {
     border-top-width: 0px;
-  }
-
-  .md\:bg-transparent {
-    background-color: transparent;
   }
 
   .md\:p-3 {
@@ -3715,10 +3735,6 @@ input[type=range]:focus {
     height: 14rem;
   }
 
-  .lg\:h-598 {
-    height: 598px;
-  }
-
   .lg\:h-auto {
     height: auto;
   }
@@ -3791,6 +3807,10 @@ input[type=range]:focus {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -3848,10 +3868,6 @@ input[type=range]:focus {
     row-gap: 0px;
   }
 
-  .lg\:overflow-hidden {
-    overflow: hidden;
-  }
-
   .lg\:overflow-y-auto {
     overflow-y: auto;
   }
@@ -3886,10 +3902,6 @@ input[type=range]:focus {
 
   .lg\:border-l {
     border-left-width: 1px;
-  }
-
-  .lg\:border-t-0 {
-    border-top-width: 0px;
   }
 
   .lg\:bg-transparent {

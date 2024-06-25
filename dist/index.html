@@ -16,6 +16,127 @@
     <!-- overlay -->
     <div id="overlay" class="bg-black opacity-0 fixed inset-0 -z-50"></div>
 
+     <!-- filter modal -->
+     <form id="filterModal"
+     class="lg:hidden transition-all duration-200 w-full fixed -right-1200 inset-y-0 bg-white z-30">
+     <div class="relative p-5 shadow-shadowMenu">
+         <svg id="closeFilter" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+             class="bi bi-x absolute left-5 cursor-pointer hover:text-red-600 transition-all" viewBox="0 0 16 16">
+             <path
+                 d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708">
+             </path>
+         </svg>
+         <h5 class="text-center font-medium text-black2">فیلترها</h5>
+     </div>
+     <div class="px-4 overflow-y-auto h-[79vh] mt-2 pb-20">
+         <div class="flex items-center justify-between cursor-pointer py-4 border-b">
+             <p>فقط محصولات با تخفیف</p>
+             <label class="relative inline-flex items-center cursor-pointer">
+                 <input type="checkbox" value="" class="sr-only peer">
+                 <div
+                     class="w-14 h-8 bg-toggle peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-info">
+                 </div>
+             </label>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>برند <span class="bg-info w-2 h-2 inline-block rounded-full mr-2"></span></p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+             <p class="text-gray61 text-sm mt-2">سامسونگ، شیائومی، اپل</p>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>حافظه داخلی</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+         <div class="cursor-pointer py-4 border-b" id="openPriceLimit">
+             <div class="flex items-center justify-between">
+                 <p>محدوده قیمت</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+         <div class="flex items-center justify-between cursor-pointer py-4 border-b">
+             <p>فقط محصولات موجود</p>
+             <label class="relative inline-flex items-center cursor-pointer">
+                 <input type="checkbox" value="" class="sr-only peer">
+                 <div
+                     class="w-14 h-8 bg-toggle peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-info">
+                 </div>
+             </label>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>رزولوشن</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>مدل گوشی</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>نوع قطعه موبایل</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>نوع ابزار تعمیرات موبایل</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+         <div class="cursor-pointer py-4 border-b openSelectedFilter">
+             <div class="flex items-center justify-between">
+                 <p>رم</p>
+                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                         d="M8.77958 12.6699C8.40681 12.2999 8.40681 11.7001 8.77958 11.3301L13.8705 6.27748C14.2433 5.90751 14.8476 5.90751 15.2204 6.27748C15.5932 6.64745 15.5932 7.24729 15.2204 7.61726L10.8045 12L15.2204 16.3827C15.5932 16.7527 15.5932 17.3526 15.2204 17.7225C14.8476 18.0925 14.2433 18.0925 13.8705 17.7225L8.77958 12.6699Z"
+                         fill="#666666" />
+                 </svg>
+             </div>
+         </div>
+     </div>
+     <!--  -->
+     <div class="absolute bottom-0 right-0 left-0 shadow-shadowMenu p-4 h-18 bg-white z-20 flex items-center gap-4">
+         <input type="reset" value="حذف فیلترها" class="text-gray60 py-3 px-4 border rounded-lg cursor-pointer">
+         <a class="text-white font-bold text-sm py-3 px-4 bg-black rounded-lg flex-grow cursor-pointer text-center">نمایش
+             1240 محصول</a>
+     </div>
+ </form>
+
     <!-- category modal -->
     <div id="categoryModal"
         class="lg:hidden transition-all duration-200 w-full fixed -right-1200 inset-y-0 z-30 bg-white pb-14">
@@ -7430,26 +7551,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7497,26 +7618,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7564,26 +7685,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7631,26 +7752,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7698,26 +7819,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7765,26 +7886,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7832,26 +7953,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -7899,26 +8020,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="time" src="img/bg.png" class="rounded-lg w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600"
                                         style="direction:rtl">ساعت هوشمند
@@ -8005,26 +8126,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile1.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8073,26 +8194,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile2.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8141,26 +8262,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile1.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8209,26 +8330,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile3.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8277,26 +8398,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile4.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8345,26 +8466,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile5.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8413,26 +8534,26 @@
                                         %5</p>
                                     <div class="relative">
                                         <img alt="mobile" src="img/mobile6.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a href="single-product.html"
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 text-right rtl">ساعت
@@ -8507,26 +8628,6 @@
                                     class="flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi1.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8572,26 +8673,6 @@
                                     class="flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi2.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8637,26 +8718,6 @@
                                     class="flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi3.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8702,26 +8763,6 @@
                                     class="flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l md:border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi4.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8767,26 +8808,6 @@
                                     class="hidden md:flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l border-b lg:border-b-0">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi5.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8832,26 +8853,6 @@
                                     class="hidden md:flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l border-b lg:border-b-0">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi6.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8897,26 +8898,6 @@
                                     class="hidden md:flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi7.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -8962,26 +8943,6 @@
                                     class="hidden md:flex items-center transition-all md:hover:shadow-lg group p-3 gap-2 border-l-0 md:border-l">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi8.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9042,26 +9003,6 @@
                                     class="flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi1.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9107,26 +9048,6 @@
                                     class="flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi2.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9172,26 +9093,6 @@
                                     class="flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi3.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9237,26 +9138,6 @@
                                     class="flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l md:border-b">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi4.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9302,26 +9183,6 @@
                                     class="hidden md:flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l border-b lg:border-b-0">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi5.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9367,26 +9228,6 @@
                                     class="hidden md:flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l border-b lg:border-b-0">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi6.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9432,26 +9273,6 @@
                                     class="hidden md:flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi7.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9497,26 +9318,6 @@
                                     class="hidden md:flex items-center p-3 transition-all md:hover:shadow-lg group gap-2 border-l-0 md:border-l">
                                     <div class="relative">
                                         <img alt="mobile" src="img/janebi8.png" class="w-full">
-                                        <div class="absolute -bottom-1 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
                                     </div>
                                     <div>
                                         <a
@@ -9613,26 +9414,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair1.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت
@@ -9678,26 +9479,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair2.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت
@@ -9743,26 +9544,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair3.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت
@@ -9808,26 +9609,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair4.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت
@@ -9873,26 +9674,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair5.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت
@@ -9938,26 +9739,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair6.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت
@@ -10003,26 +9804,26 @@
                                     class="border-gray-200 border rounded-xl p-3 relative transition-all md:hover:shadow-lg md:hover:scale-105">
                                     <div class="relative">
                                         <img alt="mobile" src="img/repair3.png" class="w-full">
-                                        <div class="absolute bottom-0 right-0 flex items-center gap-1">
-                                            <span class="w-2 h-2 border rounded-full block bg-blue-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-green-400"></span>
-                                            <span class="w-2 h-2 border rounded-full block bg-orange-600"></span>
-                                            <a class="text-zinc-800 cursor-pointer">
-                                                <svg width="9" height="9" viewBox="0 0 6 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <g clip-path="url(#clip0_97_327)">
-                                                        <path
-                                                            d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z"
-                                                            fill="#212121" />
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath id="clip0_97_327">
-                                                            <rect width="6" height="6" fill="white" />
-                                                        </clipPath>
-                                                    </defs>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                         <div dir="rtl" class="flex items-center justify-center gap-2 sizeBox mt-2">
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">S</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">M</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">L</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">2XL</span>
+                                        <span class="font-bold flex items-center justify-center border-info text-xs border border-dashed rounded-full w-6 h-6 bg-info3">3XL</span>
+                                        <span class="text-zinc-800 cursor-pointer showSize">
+                                            <svg width="16" height="16" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0_97_327)">
+                                                    <path d="M2.75 0.75V2.75H0.75V3.25H2.75V5.25H3.25V3.25H5.25V2.75H3.25V0.75H2.75Z" fill="#212121"></path>
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_97_327">
+                                                        <rect width="6" height="6" fill="white"></rect>
+                                                    </clipPath>
+                                                </defs>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     </div>
                                     <a
                                         class="cursor-pointer transition-all hover:text-info text-sm font-semibold mt-4 block text-zinc-600 rtl">ساعت

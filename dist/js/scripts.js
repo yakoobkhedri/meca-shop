@@ -442,6 +442,16 @@ startButton.forEach((item) => {
 function goBack() {
     window.history.back();
 }
+// show all Size
+
+let showSize = Array.from(document.getElementsByClassName('showSize'));
+
+showSize.forEach((item) => {
+    item.addEventListener('click', function () {
+        item.parentElement.classList.add('active');
+        item.style.display = 'none';
+    })
+})
 
 // select size  
 
@@ -464,13 +474,3 @@ showAllCat.addEventListener('click', function () {
     this.parentElement.style.display = 'none';
 })
 
-// show all Size
-
-let showSize = Array.from(document.getElementsByClassName('showSize'));
-
-showSize.forEach((item) => {
-    item.addEventListener('click', function () {
-        item.parentElement.classList.add('active');
-        item.style.display = 'none';
-    })
-})

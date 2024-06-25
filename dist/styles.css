@@ -785,6 +785,10 @@ video {
   top: auto;
 }
 
+.bottom-\[89px\] {
+  bottom: 89px;
+}
+
 .-z-10 {
   z-index: -10;
 }

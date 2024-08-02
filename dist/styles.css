@@ -845,10 +845,6 @@ video {
   grid-column: span 2 / span 2;
 }
 
-.col-span-3 {
-  grid-column: span 3 / span 3;
-}
-
 .col-span-4 {
   grid-column: span 4 / span 4;
 }
@@ -886,6 +882,11 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -906,11 +907,6 @@ video {
   margin-bottom: 1.25rem;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .-mt-7 {
   margin-top: -1.75rem;
 }
@@ -921,6 +917,10 @@ video {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mb-2 {
@@ -1106,14 +1106,6 @@ video {
 
 .mt-9 {
   margin-top: 2.25rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .block {
@@ -1408,16 +1400,8 @@ video {
   width: 100%;
 }
 
-.w-44 {
-  width: 11rem;
-}
-
-.w-72 {
-  width: 18rem;
-}
-
-.w-20 {
-  width: 5rem;
+.w-60 {
+  width: 15rem;
 }
 
 .min-w-\[110px\] {
@@ -2178,11 +2162,6 @@ video {
           padding-inline-start: 0.75rem;
 }
 
-.ps-4 {
-  -webkit-padding-start: 1rem;
-          padding-inline-start: 1rem;
-}
-
 .ps-8 {
   -webkit-padding-start: 2rem;
           padding-inline-start: 2rem;
@@ -2247,11 +2226,6 @@ video {
 
 .text-5xl {
   font-size: 3rem;
-  line-height: 1;
-}
-
-.text-6xl {
-  font-size: 3.75rem;
   line-height: 1;
 }
 
@@ -3467,18 +3441,6 @@ input[type=range]:focus {
     margin-top: 1.25rem;
   }
 
-  .md\:mt-30 {
-    margin-top: 124px;
-  }
-
-  .md\:mt-10 {
-    margin-top: 2.5rem;
-  }
-
-  .md\:mt-24 {
-    margin-top: 6rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -3762,6 +3724,10 @@ input[type=range]:focus {
     margin-top: 0.75rem;
   }
 
+  .lg\:mt-30 {
+    margin-top: 124px;
+  }
+
   .lg\:mt-48 {
     margin-top: 12rem;
   }
@@ -3776,10 +3742,6 @@ input[type=range]:focus {
 
   .lg\:mt-9 {
     margin-top: 2.25rem;
-  }
-
-  .lg\:mt-30 {
-    margin-top: 124px;
   }
 
   .lg\:block {
@@ -3852,6 +3814,10 @@ input[type=range]:focus {
 
   .lg\:w-auto {
     width: auto;
+  }
+
+  .lg\:w-80 {
+    width: 20rem;
   }
 
   .lg\:max-w-472 {
@@ -4113,10 +4079,6 @@ input[type=range]:focus {
 }
 
 @media (min-width: 1280px) {
-  .xl\:mt-0 {
-    margin-top: 0px;
-  }
-
   .xl\:h-\[198px\] {
     height: 198px;
   }

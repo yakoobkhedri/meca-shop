@@ -299,7 +299,7 @@ height: 2px;
 .sizeBox > span:nth-child(1),.sizeBox > span:nth-child(2),.sizeBox > span:nth-child(3){
   display: flex;
 }
-.categoryBox > div,.sizeBox > span{
+.categoryBox > div,.sizeBox > span,.selectSize{
   display: none;
 }
 .sizeBox.active > span{
@@ -308,8 +308,14 @@ height: 2px;
 .categoryBox.active > div{
   display: block;
 }
+.selectSize.active{
+  @apply flex;
+}
 .selectSize > div.active{
-  @apply bg-info3
+  @apply bg-info3;
+}
+.selectColor.active{
+  @apply border-2 border-info;
 }
 @media only screen and (max-width: 992px) {
 

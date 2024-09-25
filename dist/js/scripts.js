@@ -453,9 +453,11 @@ showSize.forEach((item) => {
     })
 })
 
-// select size  
+// select size  && color
 
 let selectSize = Array.from(document.querySelectorAll('.selectSize > div'));
+let selectColor = Array.from(document.querySelectorAll('.selectColor'));
+let sizes = Array.from(document.querySelectorAll('.sizes > div'));
 
 selectSize.forEach((item) => {
     item.addEventListener('click', function () {
@@ -464,7 +466,23 @@ selectSize.forEach((item) => {
         document.getElementById('sizeText').textContent = item.textContent;
     })
 })
-
+selectColor.forEach((item) => {
+    item.addEventListener('click', function () {
+        selectColor.forEach((items) => { items.classList.remove('active') });
+        item.classList.add('active');
+        let tabId = item.dataset.id;
+        let tabColor = item.dataset.color;
+        document.getElementById('colorText').textContent = tabColor;
+        sizes.forEach((content) => {
+            let contentId = content.dataset.id;
+            if (tabId === contentId) {
+                content.style.display = 'flex';
+            } else {
+                content.style.display = 'none';
+            }
+        })
+    })
+})
 // show all category
 
 let showAllCat = document.getElementById('showAllCat');

@@ -857,6 +857,10 @@ video {
   grid-column: span 8 / span 8;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -905,6 +909,16 @@ video {
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-24 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .-mt-7 {
@@ -1406,6 +1420,10 @@ video {
 
 .min-w-\[110px\] {
   min-width: 110px;
+}
+
+.max-w-472 {
+  max-width: 472px;
 }
 
 .max-w-890 {
@@ -2512,6 +2530,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2914,14 +2938,14 @@ input[type=range]:focus {
   visibility: visible;
 }
 
-#editModal,#loginModal,#compareModal,#commentModal,#shareModal,#notifModal,#editAddress,#saveMapModal{
+#editModal,#compareModal,#commentModal,#shareModal,#notifModal,#editAddress,#saveMapModal{
   opacity: 0;
   z-index: 50;
   visibility: hidden;
   transition: all .4s;
 }
 
-#editModal.active,#loginModal.active,#compareModal.active,#commentModal.active,#shareModal.active,#notifModal.active,#editAddress.active,#saveMapModal.active{
+#editModal.active,#compareModal.active,#commentModal.active,#shareModal.active,#notifModal.active,#editAddress.active,#saveMapModal.active{
   opacity: 100%;
   visibility: visible;
 }
@@ -3320,12 +3344,20 @@ input[type=range]:focus {
     display: flex;
   }
 
+  .sm\:h-14 {
+    height: 3.5rem;
+  }
+
   .sm\:w-44 {
     width: 11rem;
   }
 
   .sm\:w-52 {
     width: 13rem;
+  }
+
+  .sm\:w-14 {
+    width: 3.5rem;
   }
 
   .sm\:max-w-7xl {

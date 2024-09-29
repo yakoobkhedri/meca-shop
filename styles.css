@@ -274,13 +274,13 @@ height: 2px;
   opacity: 40%;
   visibility: visible;
 }
-#editModal,#loginModal,#compareModal,#commentModal,#shareModal,#notifModal,#editAddress,#saveMapModal{
+#editModal,#compareModal,#commentModal,#shareModal,#notifModal,#editAddress,#saveMapModal{
   opacity: 0;
   z-index: 50;
   visibility: hidden;
   transition: all .4s;
 }
-#editModal.active,#loginModal.active,#compareModal.active,#commentModal.active,#shareModal.active,#notifModal.active,#editAddress.active,#saveMapModal.active{
+#editModal.active,#compareModal.active,#commentModal.active,#shareModal.active,#notifModal.active,#editAddress.active,#saveMapModal.active{
   opacity: 100%;
   visibility: visible;
 }

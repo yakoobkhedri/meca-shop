@@ -110,7 +110,7 @@ var time = new Swiper(".time", {
     }
 });
 var mobile = new Swiper(".mobile", {
-    slidesPerView: 1.6,
+    slidesPerView: 1.4,
     loop: true,
     autoplay: {
         delay: 2500,

@@ -19,7 +19,7 @@
     <main class="px-3">
 
         <!-- login  -->
-        <form id="loginModal" class="bg-white m-auto max-w-472 my-20 shadow-sm border rounded-lg">
+        <form id="loginForm" class="bg-white m-auto max-w-472 my-20 shadow-sm border rounded-lg">
             <div class="flex items-center justify-center py-4 px-8 border-b">
                 <p class="font-medium text-lg">تایید شماره موبایل</p>
             </div>
@@ -30,26 +30,27 @@
                     <p class="my-4">کد ارسال شده به شماره <a class="text-info cursor-pointer">09125873145</a> را وارد
                         کنید
                     </p>
-                    <div dir="ltr" class="mt-6 flex items-center justify-center gap-2">
+                    <div dir="ltr" class="otpContainer mt-6 flex items-center justify-center gap-2">
                         <input
-                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
-                            maxlength="1">
+                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg otpInput w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
+                           type="number" maxlength="1" disabled>
                         <input
-                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
-                            maxlength="1">
+                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg otpInput w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
+                           type="number" maxlength="1" disabled>
                         <input
-                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
-                            maxlength="1">
+                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg otpInput w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
+                           type="number" maxlength="1" disabled>
                         <input
-                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
-                            maxlength="1">
+                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg otpInput w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
+                           type="number" maxlength="1" disabled>
                         <input
-                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
-                            maxlength="1">
+                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg otpInput w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
+                           type="number" maxlength="1" disabled>
                         <input
-                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
-                            maxlength="1">
+                            class="border-2 hover:border-info transition-all focus:border-info rounded-lg otpInput w-10 sm:w-14 h-10 sm:h-14 block text-center outline-none"
+                           type="number" maxlength="1" disabled>
                     </div>
+                    <input type="hidden" id="otpHiddenInput" />
                     <div class="my-4">
                         <p id="noCode" class="text-xs text-gray61 text-center">کدی دریافت نکردید؟
                             <span class="startButton cursor-pointer transition-all hover:text-info">
@@ -60,8 +61,9 @@
                     <div class="mb-4 flex items-center justify-center gap-2 text-xs text-gray61">
                         <div class="text-lg font-bold text-info" id="countdown">120</div> ثانیه
                     </div>
-                    <input type="submit" value="تایید و ادامه"
-                        class="font-bold text-sm cursor-pointer rounded-lg transition-all hover:bg-info2 bg-info p-3 text-white w-full md:mr-auto block">
+                    <button class="font-bold text-sm cursor-pointer rounded-lg transition-all hover:bg-info2 bg-info p-3 text-white w-full md:mr-auto block">
+                        تایید و ادامه
+                    </button>
                     <a href="login.html" id="changeNumber"
                         class="font-bold transition-all hover:text-info text-gray60 mt-6 pt-6 border-t block cursor-pointer">تغییر
                         شماره موبایل</a>
@@ -73,6 +75,7 @@
 
 
     <script src="js/otp.js"></script>
+    <script src="js/otp (2).js"></script>
 </body>
 
 </html>

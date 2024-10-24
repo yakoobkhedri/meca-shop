@@ -475,7 +475,7 @@
 
     <!-- header -->
     <header>
-        <div class="shadow-shadowMenu lg:hidden bg-white fixed top-0 inset-x-0 z-20">
+        <div class="shadow-shadowMenu lg:hidden bg-white fixed top-0 inset-x-0 z-30">
             <a class="cursor-pointer absolute right-4 top-6">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 16L14 12L10 8" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -483,7 +483,7 @@
             </a>
             <div class="flex items-center justify-center xl:max-w-6xl lg:max-w-5xl md:max-w-3xl sm:max-w-xl mx-auto px-4 py-5">
                 <a class="flex items-center gap-2 cursor-pointer">
-                    <p class="font-bold text-lg">آدرس های من</p>
+                    <p class="font-bold text-lg">افزودن آدرس</p>
                 </a>
             </div>
         </div>
@@ -2157,7 +2157,7 @@
         <!-- cart -->
         <section>
             <!--  -->
-            <div class="grid grid-cols-12 gap-6 mt-10 lg:mt-14">
+            <div class="grid grid-cols-12 gap-6 mt-14 mb-20">
                 <div class="lg:col-span-3 col-span-12">
                     <div id="profile-menu"
                         class="lg:border lg:rounded-2xl bg-white transition-all duration-200 z-30 fixed lg:static inset-x-0 h-full lg:h-auto">
@@ -2246,7 +2246,7 @@
                                     </a>
                                 </li>
                                 <li class="lg:mb-6 border-b lg:border-b-0 py-4 lg:py-0">
-                                    <a href="comments.html"
+                                    <a href="my-addresses.html"
                                         class="flex items-center gap-2 justify-between cursor-pointer">
                                         <div class="flex items-center gap-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt text-info" viewBox="0 0 16 16">
@@ -2368,44 +2368,67 @@
                     <div class="lg:border rounded-2xl lg:p-6 mb-6">
                         <form
                         class="bg-white w-full">
-                        <div class="flex items-center justify-between pb-4 px-8 border-b shadow-shadowMenu lg:shadow-none">
+                        <div class="hidden lg:flex items-center justify-between pb-4 px-8 border-b shadow-shadowMenu lg:shadow-none">
                             <p class="font-medium text-lg">افزودن آدرس</p>
                         </div>
-                        <div class="p-6">
-                            <div class="relative mb-4">
-                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">نام و نام خانوادگی</label>
-                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm" value="علی فریدنیا">
+                        <div class="p-6 grid grid-cols-1 sm:grid-cols-2 sm:gap-9 gap-6">
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">نام</label>
+                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm">
                             </div>
-                            <div class="relative mb-4">
-                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">کدملی</label>
-                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm" value="۰۱۲۵۴۳۶۳۲۱">
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">نام خانوادگی</label>
+                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm">
                             </div>
-                            <div class="relative mb-4">
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">عنوان آدرس</label>
+                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm">
+                            </div>
+                            <div class="relative">
                                 <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">شماره موبایل</label>
-                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm" value="۰۹۱۲۱۲۴۲۵۵۲">
+                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm">
                             </div>
-                            <div class="relative mb-4">
-                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">ایمیل</label>
-                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm" value="Faridnia91@gmail.com">
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">شماره تلفن ثابت</label>
+                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm">
                             </div>
-                            <div class="mb-4 flex items-center gap-3">
-                                <div class="relative flex-grow">
-                                    <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">رمز عبور</label>
-                                    <input type="password" class="rounded-lg outline-none border w-full px-3 py-4 text-sm"
-                                        value="76505">
-                                </div>
-                                <a class="text-sm font-bold py-4 px-6 rounded-lg border border-info cursor-pointer text-info">تغییر
-                                    رمز</a>
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">استان</label>
+                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white">
+                                    <option>کردستان</option>
+                                    <option>تهران</option>
+                                </select>
                             </div>
-                            <div class="relative mb-6">
-                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">شماره شبا</label>
-                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm"
-                                    value="IR۵۲۰۶۲۰۰۰۰۰۰۰۲۰۸۹۲۱۸۲۸۰۰۰">
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">شهر</label>
+                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white">
+                                    <option>سنندج</option>
+                                    <option>تهران</option>
+                                </select>
+                            </div>
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">محله</label>
+                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white">
+                                    <option>نیاوران</option>
+                                    <option>زعفرانیه</option>
+                                </select>
+                            </div>
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">آدرس پستی</label>
+                                <textarea rows="5" class="rounded-lg outline-none border w-full px-3 py-4 text-sm resize-none"></textarea>
+                            </div>
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">توضیحات</label>
+                                <textarea rows="5" class="rounded-lg outline-none border w-full px-3 py-4 text-sm resize-none"></textarea>
+                            </div>
+                            <div class="relative">
+                                <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">کدپستی</label>
+                                <input class="rounded-lg outline-none border w-full px-3 py-4 text-sm">
                             </div>
                         </div>
-                        <div class="p-4 border-t lg:static absolute bottom-0 w-full">
-                            <input type="submit" value="تایید و ذخیره"
-                                class="font-bold text-sm cursor-pointer rounded-lg bg-info p-3 text-white lg:w-48 w-full lg:mr-auto block">
+                        <div class="p-4 w-full">
+                            <input type="submit" value="ثبت آدرس"
+                                class="font-bold text-sm cursor-pointer rounded-lg transition-all bg-info hover:bg-info2 p-3 text-white lg:w-48 w-full lg:ml-auto block">
                         </div>
                     </form>
                     </div>

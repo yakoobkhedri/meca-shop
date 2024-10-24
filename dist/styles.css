@@ -3499,6 +3499,10 @@ input[type=range]:focus {
     gap: 1rem;
   }
 
+  .sm\:gap-9 {
+    gap: 2.25rem;
+  }
+
   .sm\:gap-x-0 {
     -moz-column-gap: 0px;
          column-gap: 0px;
@@ -3911,6 +3915,10 @@ input[type=range]:focus {
 
   .lg\:mt-9 {
     margin-top: 2.25rem;
+  }
+
+  .lg\:ml-auto {
+    margin-left: auto;
   }
 
   .lg\:block {

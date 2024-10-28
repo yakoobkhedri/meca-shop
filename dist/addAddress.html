@@ -2394,7 +2394,7 @@
                             </div>
                             <div class="relative">
                                 <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">استان</label>
-                                <select id="province" onchange="populateCities()" required class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white">
+                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white" id="province" onchange="populateCities()" required>
                                     <option value="">انتخاب کنید...</option>
                                     <option value="tehran">تهران</option>
                                     <option value="khorasan">خراسان</option>
@@ -2403,15 +2403,14 @@
                             </div>
                             <div class="relative">
                                 <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">شهر</label>
-                                <select id="city" disabled required class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white">
+                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white" id="city" onchange="populateNeighborhoods()" disabled required>
                                     <option value="">ابتدا استان را انتخاب کنید...</option>
                                 </select>
                             </div>
                             <div class="relative">
                                 <label class="text-xs text-gray60 bg-white absolute right-3 -top-2 z-20 px-3">محله</label>
-                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white">
-                                    <option>نیاوران</option>
-                                    <option>زعفرانیه</option>
+                                <select class="rounded-lg outline-none border w-full px-3 py-4 text-sm bg-white" id="neighborhood" disabled required>
+                                    <option value="">ابتدا شهر را انتخاب کنید...</option>
                                 </select>
                             </div>
                             <div class="relative">
